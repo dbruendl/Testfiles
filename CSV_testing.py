@@ -5,18 +5,21 @@ from CSV.csv_rw import *
 
 
 class MyTestCase(unittest.TestCase):
+    def setUp(self):
+        self.testcsv = csv_rw("ergebnisse.csv")
+        pass
 
     def testread(self):
-        csv_rw.readf(self,"ergebnisse.csv")
+        self.testcsv.readf("ergebnisse.csv")
 
     def testwrite(self):
-        csv_rw.writef(self,"test.csv")
+        self.testcsv.writef("test.csv")
 
     def testread2(self):
-        csv_rw.readf(self,"test.csv")
+        self.testcsv.readf("test.csv")
 
     def testread3(self):
-        csv_rw.readf(self,"test.txt")
+        self.testcsv.readf("test.txt")
 
 
 
